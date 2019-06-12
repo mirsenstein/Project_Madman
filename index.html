@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" type="image/ico" href="images/icons/candy.png"/>
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+
+	<title>Madman</title>
+	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+	<script type="text/javascript" src="styles/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<div class="form_container p-l-55 p-r-55 p-t-65 p-b-54">
+		<form>
+			<div>
+				<input type="text" id="ingr" placeholder="Съставка">
+				<input type="int" id="effect" placeholder="Свойство">
+			</div>
+		</form>
+		<div>
+			<input type="button" id="add" value="Добави съставка">
+		</div>
+
+		<div>
+			<input type="button" id="send" value="Изпрати">
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var n = 2;
+		
+		$('#add').click(function(){
+			// var f = document.getElementsByTagName('form');
+			if (n < 10) {
+				var i = $('<div><input type="text" id="ingr" placeholder="Съставка"><input type="int" id="effect" placeholder="Свойство"></div>')
+				// var i = $('<input type="text" id="ingr' + n + '" placeholder="Съставка">'),
+					// j = $('<input type="int" id="effect' + n + '" placeholder="Свойство">');
+
+				$('form').append(i);
+				// $('form').append(j);
+
+				n++;
+			} else {
+				alert('Достигнахте максималния брой съставки! Нека проверим за колко дълго ще отървем света от разруха!');
+			}
+		});
+
+		$('#send').click(function(){
+			for (var i = 1; i < n; i++) {
+				var person = $('<p>' + i + '. ' + $('#ingr' + i).val() + ' - ' + $('#effect' + i).val() +'</p>');
+				$('body').append(person);
+			}
+
+		});
+		
+	</script>
+</html>

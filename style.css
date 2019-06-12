@@ -1,0 +1,12 @@
+body {
+	cursor: url("http://downloads.totallyfreecursors.com/cursor_files/potion1.ani"), url("http://downloads.totallyfreecursors.com/thumbnails/potion1.gif"), auto;
+}
+
+div.form_container {
+	align-content: center;  
+	justify-content: center;
+  	align-items: center;
+	margin: auto;
+  	width: 50%;
+  	position: fixed;
+}

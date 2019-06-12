@@ -6,4 +6,9 @@ function factorialize(num) {
   }
   return num;
 }
-factorialize(5);
+
+// 1 ingr => 1
+
+// all ingr same effect => 0
+
+// # of same effect > # of rest ingr => 0
