@@ -1,3 +1,51 @@
-body {
+html {
 	cursor: url("http://downloads.totallyfreecursors.com/cursor_files/potion1.ani"), url("http://downloads.totallyfreecursors.com/thumbnails/potion1.gif"), auto;
+	/*background-color: #fbf1ee;*/
+/*    background-image: url("https://media0.giphy.com/media/3o84TVYfCexBXk011u/giphy.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;*/
+}
+body {
+    background: transparent;
+    text-align: center;
+}
+
+.form_container {
+    text-align: center;
+    z-index: 999;
+    position: relative;
+	align-content: center;  
+	justify-content: center;
+  	align-items: center;
+	padding-top: 200px;
+  	width: 50%;
+}
+
+#cauldron {
+    z-index: -100;
+}
+
+input.ingr, .effect {
+	padding: 10px;
+	margin: 10px;
+}
+
+.button, .col {
+	margin-top: 10px;
+}
+
+#loading {
+	background-color: #fbf1ee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+    display: none;
+}
+
+#cauldron {
+    width: 500px;
 }
