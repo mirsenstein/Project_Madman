@@ -35,12 +35,17 @@ function permAlone(inputStr) {
     objLen++;
   }
   var values = Object.values(charVals);
+  for (var l = 0; l < values.length; l++){
+  	var check = (values[l]*2) - inStrLen;
+  	if (check>=0){
+  		results = 0;
+  	}
+  }
 
   if ((objLen == 1)&&(inStrLen > 1)){
     results = 0;
   } else {
     totalPerm = factorialize(inStrLen);
-
 
   //check for and calculate invalid perms
     var bigVals = [];
@@ -107,7 +112,7 @@ $('#send').click(function(){
 						$('.form_container').hide();
 						$( "#add" ).hide();
 						$('body').append(err);
-						$('#cauldron').attr('onClick', 'location.reload();');
+						$('.cauldron').attr('onClick', 'location.reload();');
 
 						errorFlag = 1;
 					}
@@ -122,7 +127,7 @@ $('#send').click(function(){
 				$('.form_container').hide();
 				$( "#add" ).hide();
 				$('body').append(err);
-				$('#cauldron').attr('onClick', 'location.reload();');
+				$('.cauldron').attr('onClick', 'location.reload();');
 
 				errorFlag = 1;
 			}
@@ -135,7 +140,7 @@ $('#send').click(function(){
 				$('.form_container').hide();
 				$( "#add" ).hide();
 				$('body').append(err);
-				$('#cauldron').attr('onClick', 'location.reload();');
+				$('.cauldron').attr('onClick', 'location.reload();');
 
 				errorFlag = 1;
 			}
@@ -162,7 +167,14 @@ $('#send').click(function(){
 
 $("#loading").click(function(){
 	$("#loading").hide();
-	var res = $('<div><h1>Светът ще оцелее още '+result+' дни!</h1></div>');
-	$('body').append(res);
-	$('.cauldron').attr('onClick', 'location.reload();');
+	if (result > 0){
+		var res = $('<div><h1>Светът ще оцелее още '+result+' дни!</h1></div>');
+		$('body').append(res);
+		$('.cauldron').attr('onClick', 'location.reload();');
+	} else {
+		var res = $('<div><h1>О, не! С тази рецепта нямаме успех. Пробвайте пак!</h1></div>');
+		$('body').append(res);
+		$('#cauldron').attr('src', 'images/cauldron_bad.gif');
+		$('.cauldron').attr('onClick', 'location.reload();');
+	}
 });
